@@ -1,0 +1,135 @@
+<ion-view>
+    <ion-header-bar class="bar-calm" style="border:0px solid;">
+        <div class="buttons">
+            <a class="button button-clear" href="#/app/inspection_list">
+                <i class="icon ion-ios-arrow-left"></i>
+            </a>
+        </div>
+        <h1 class="title">My Reports</h1>
+    </ion-header-bar>
+    <!-- <style>
+    text {
+        fill:white !important;
+    }
+    </style> -->
+    <ion-content scroll="false" class="v_66">
+        <div class="bar-calm bar v_67" style="padding-bottom: 30px;">
+            <div class="col-33 v_68" ng-click="Changetab('Work')">
+                <span class="v_69">
+                    <img src="img/icons/workreport.png" />
+                </span>
+                <span class="v_69">My Work</span>
+                <span class="v_69">
+                    <img src="img/icons/tri.png" class="v_70" ng-if="rtab=='Work'"/>
+                </span>
+            </div>
+            <div class="col-33 v_68" ng-click="Changetab('Duration')">
+                <span class="v_69">
+                    <img src="img/icons/myreportDuration.png" />
+                </span>
+                <span class="v_69">Duration</span>
+                <span class="v_69">
+                    <img src="img/icons/tri.png" class="v_71"  ng-if="rtab=='Duration'"/>
+                </span>
+            </div>
+            <div class="col-33 v_68" ng-click="Changetab('Team')">
+                <span class="v_69">
+                    <img src="img/icons/Team.png" />
+                </span>
+                <span class="v_69">Team</span>
+                <span class="v_69">
+                    <img src="img/icons/tri.png" class="v_72"  ng-if="rtab=='Team'" />   
+                </span>
+            </div>
+        </div>
+    </ion-content>
+    <ion-content scroll="true" class="v_66 v_73">
+        <div ng-if="rtab =='none'" style="margin-top:30px;">
+            <p class="report_heading" style="margin-bottom:15px;">Select type of report</p>
+            
+        </div>
+        <div ng-if="rtab =='Work'" style="margin-top:30px;">
+            <p class="report_heading" style="margin-bottom:15px;">My Inspections by Status</p>
+            <div style="width:100%;padding:20px;">
+                <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-colours="colours">
+                </canvas>
+            </div>
+            <div style="margin-top:60px;float:left;width:100%">
+                <div style="width:50%;float:left">
+                    <div class="grnL" style="background-color:#C27547"></div>
+                    <span class="gptxtL">Not Started</span>
+                </div>
+                <div style="width:50%;float:left">
+                    <div class="grnR" style="background-color:#77BD52"></div>
+                    <span class="gptxtR">In Progress</span>
+                </div>
+            </div>
+            <div style="margin-top:20px;float:left;width:100%">
+                <div style="width:50%;float:left">
+                    <div class="grnL" style="background-color:#F2F2F2"></div>
+                    <span class="gptxtL">Suspended</span>
+                </div>
+                <div style="width:50%;float:left">
+                    <div class="grnR" style="background-color:#4E5BBF"></div>
+                    <span class="gptxtR">Completed</span>
+                </div>
+            </div>
+        </div>
+        <div ng-if="rtab=='Duration'" style="margin-top:30px;">
+            <p class="report_heading" style="margin-bottom:15px;">Inspection Durations</p>
+            <div style="width:100%;padding:20px;">
+                <canvas id="line" class="chart chart-line" chart-data="data2" chart-labels="labels2" chart-legend="true" chart-colours="colours2" chart-fill="false">
+                </canvas>
+            </div>
+            <div style="margin-top:60px;float:left;width:100%">
+                <div style="width:50%;float:left">
+                    <div class="grnL" style="background-color:#94A8CC"></div>
+                    <span class="gptxtL">Jack Carlson</span>
+                </div>
+                <div style="width:50%;float:left">
+                    <div class="grnR" style="background-color:#B1FF91"></div>
+                    <span class="gptxtR">Pamela Willis</span>
+                </div>
+            </div>
+            <div style="margin-top:20px;float:left;width:100%">
+                <div style="width:50%;float:left">
+                    <div class="grnL" style="background-color:#535353"></div>
+                    <span class="gptxtL">Lisa Simpson</span>
+                </div>
+                <div style="width:50%;float:left">
+                    <div class="grnR" style="background-color:#CEA078"></div>
+                    <span class="gptxtR">Anna Gordon</span>
+                </div>
+            </div>
+        </div>
+        <div ng-if="rtab=='Team'" style="margin-top:30px;">
+            <p class="report_heading" style="margin-bottom:15px;">Inflections by Team Members</p>
+            <div style="width:100%;">
+               <!--  <canvas id="bar" class="chart chart-bar" chart-data="data3" chart-labels="labels3" chart-colours="colours3" style="margin-left: -20px;height:250px !important;"> chart-series="series"
+                </canvas> -->
+                <div google-chart chart="myChartObject" style="min-height:500px;width:100%;margin-top:-15px;"></div>
+            </div>
+            <div style="float:left;width:100%">
+                <div style="width:50%;float:left">
+                    <div class="grnL" style="background-color:#9ac1ec"></div>
+                    <span class="gptxtL">Not Started</span>
+                </div>
+                <div style="width:50%;float:left">
+                    <div class="grnR" style="background-color:#e8a471"></div>
+                    <span class="gptxtR">In Progress</span>
+                </div>
+            </div>
+         <!--    <div style="margin-top:20px;float:left;width:100%">
+                <div style="width:50%;float:left">
+                    <div class="grnL" style="background-color:#F2F2F2"></div>
+                    <span class="gptxtL">Suspended</span>
+                </div>
+                <div style="width:50%;float:left">
+                    <div class="grnR" style="background-color:#4E5BBF"></div>
+                    <span class="gptxtR">Completed</span>
+                </div>
+            </div> -->
+        </div>
+        <div style="height:180px"></div>
+    </ion-content>
+</ion-view>

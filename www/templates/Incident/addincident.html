@@ -1,0 +1,61 @@
+<ion-view>
+    <ion-header-bar class="bar-calm" style="border:0px solid;">
+        <div class="buttons">
+            <a class="button button-clear" href="#/app/inspection_list">
+                <i class="icon ion-ios-arrow-left"></i>
+            </a>
+        </div>
+        <h1 class="title">Incident Details</h1>
+    </ion-header-bar>
+    <ion-content scroll="true" >
+        <div class="list v_14" >
+            <label class="item item-input item-stacked-label RptSet">
+                <span class="input-label lb rd"><b>INCIDENT TITLE</b></span>
+                <textarea type="text" class="Rptintp" ng-model="rpt.title"></textarea>
+            </label>
+            <div class="item item-input item-stacked-label RptSet">
+                <span class="input-label lb rd"><b>DESCRIPTION</b></span>
+               <textarea type="text" class="Rptintp" ng-model="recognizedText"></textarea>
+      
+               <button class="mic-btn" ng-click="speech_menu()"></button>
+            </div>
+
+                 
+         
+            <div class="item item-input item-stacked-label RptSet" style="padding-right:2%;">
+                <span class="input-label lb rd"><b>SEVERITY</b></span>
+                <div class="button-bar bar-stable">
+                    <div class="button button" ng-click="stateChange('normal')" ng-class="{'button-energized':stat=='normal'}" style="    color: #000;">NORMAL</div>
+                    <a class="button button" ng-click="stateChange('medium')" ng-class="{'button-positive':stat=='medium'}">MEDIUM</a>
+                    <a class="button button" ng-click="stateChange('high')" ng-class="{'button-assertive':stat=='high'}">HIGH</a>
+                </div>
+            </div>
+            <div class="item item-input item-stacked-label RptSet" style="padding-right:2%;">
+                <span class="input-label lb rd"><b>PHOTOS</b></span>
+                <div>
+                    <div class="photo v_54" ng-repeat="photo in picData track by $index" style="">
+                        <a class="closeButton" ng-click="removeItem($index)"></a>
+                        <img ng-src="{{photo}}" style="width:75px;height:75px" />
+                    </div>
+                    <img src="img/icons/imageplus.png" ng-click="showit()" class="v_53" style="" />
+                    
+                </div>
+            </div>
+        </div>
+        <div class="v_55" style="">
+            <div class="v_56" style="">
+                <button class="button button-light v_57" style="" ng-click="gobackinci();">
+                    Cancel
+                </button>
+            </div>
+            <div style="width:50%;float:left;">
+                <button class="button button-assertive v_58" style="" ng-click="assignimage();">
+                    Save
+                </button>
+
+            </div>
+        </div>
+        <div style="height:30px"></div>
+    </ion-content>
+
+</ion-view>

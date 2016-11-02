@@ -1,0 +1,57 @@
+<ion-view>
+    <ion-header-bar class="bar-calm" style="border:0px solid;">
+        <div class="buttons">
+            <a class="button button-clear" href="#/app/inspection_list">
+                <i class="icon ion-ios-arrow-left"></i>
+            </a>
+        </div>
+        <h1 class="title">Report Problem</h1>
+           <button class="button  button-icon  icon v-ios-paperplane-outline" ng-click="post_report()" ></button>
+
+    <!--     <div class="buttons">
+            <a class="button button-clear" ng-click="post_report()">
+            <i class="icon ion-ios-paperplane-outline"></i>
+            </a>
+        </div> -->
+    </ion-header-bar>
+    <ion-content scroll="true" >
+        <div class="list v_14">
+            <label class="item item-input item-stacked-label RptSet">
+                <span class="input-label lb"><b>LOCATION</b></span>
+                <input type="text" class="Rptintp " ng-model="rpt.location">
+            </label>
+            <label class="item item-input item-stacked-label RptSet">
+                <span class="input-label lb"><b>ACTIONS PERFORMED</b></span>
+                <input type="text" class="Rptintp" ng-model="rpt.actions">
+            </label>
+            <label class="item item-input item-stacked-label RptSet">
+                <span class="input-label lb"><b>EXPECTED RESULT</b></span>
+                <input type="text" class="Rptintp" ng-model="rpt.expected">
+            </label>
+            <label class="item item-input item-stacked-label RptSet">
+                <span class="input-label lb"><b>ACTUAL RESULT </b></span>
+                <input type="text" class="Rptintp" ng-model="rpt.actual">
+            </label>
+            <div class="item item-input item-stacked-label RptSet" style="padding-right:2%;">
+                <span class="input-label lb"><b>ACTUAL RESULT </b></span>
+                <div class="button-bar bar-light">
+                    <a class="button" ng-click="stateChange('normal')" ng-class="{'button-energized':stat=='normal'}" style="font-size: 14px;  color: #000;">NORMAL</a>
+                    <a class="button" ng-click="stateChange('medium')" ng-class="{'button-positive':stat=='medium'}" style="font-size: 14px;">MEDIUM</a>
+                    <a class="button" ng-click="stateChange('high')" ng-class="{'button-assertive':stat=='high'}" style="font-size: 14px;">HIGH</a>
+                </div>
+            </div>
+            <div class="item item-input item-stacked-label RptSet" style="padding-right:2%;">
+                <span class="input-label lb"><b>ATTACHMENT</b></span>
+                <div>
+                    
+                    <div class="photo" ng-repeat="photo in picData track by $index" style="margin-right:15px !important;float:left;margin-bottom:15px;">
+                        <a class="closeButton" ng-click="removeItem($index)"></a>
+                        <img ng-src="{{photo}}" style="width:75px;height:75px" />
+                    </div> 
+                    <img src="img/icons/imageplus.png" ng-click="showit()" style="float:left;margin-right:15px;margin-bottom:15px;" />                   
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+

@@ -1,0 +1,122 @@
+<ion-view view-title="Outstanding Inspections" hide-back-button="true" can-swipe-back="false" hide-nav-bar="true">
+    <!-- <ion-nav-buttons side="left">
+        <button class="button  button-icon  icon ion-navicon" ng-click="show_menu()"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button  button-icon  icon v-map" ng-click="changeview('map')" ng-if="change_view1"></button>
+        <button class="button  button-icon  icon v-ios-list-outline" ng-click="changeview('list')" ng-if="change_view2"></button>
+    </ion-nav-buttons> -->
+    <ion-header-bar class="bar-calm">
+        <div class="buttons">
+            <button class="button  button-icon  icon ion-navicon" ng-click="show_menu()"></button>
+        </div>
+        <h1 class="title"  ng-click="bottom_menu1()">Outstanding Inspections</h1>
+        <div class="buttons">
+           <button class="button  button-icon  icon v-map" ng-click="changeview('map')" ng-if="change_view1"></button>
+        <button class="button  button-icon  icon v-ios-list-outline" ng-click="changeview('list')" ng-if="change_view2"></button>
+        </div>
+    </ion-header-bar>
+    <ion-content style="{{scrollchange}}" class="has-footerr">
+        <div class="v_top" ng-if="change_view2"></div>
+        <div class="list" ng-if="change_view1">
+            <div ng-repeat="list in inspection_list">
+                <a class="item item-avatar v_1" ng-class="{'assertive-bg':$odd}" ng-click="toggleGroup(list,$index)" style=" ">
+                    <img ng-src="{{list.Image}}">
+                    <h2 class="v_2"> {{list.Name}}</h2>
+                    <p class="v_3">{{list.Location}}</p>
+                    <p class="v_3">Distance : {{list.Distance}}</p>
+                </a>
+                <a class="item item-accordion  v_4 " ng-show="isGroupShown(list)">
+                    <div style="color: #02c4d9;">s</div>
+                    <div class="button-bar v_bg" style="margin-top: -21px;">
+                        <button class="button  button-icon  ion-ios-play-outline v_5" ng-click="goto_inspectionDetail(list.Id)"></button>
+                        <button class="button  button-icon  v_5">
+                            <img src="img/icons/u51.png" class="v-ios-chatbubble-outline " alt="">
+                        </button>
+                        <button class="button  button-icon  v-compass v_6">
+                            <img src="img/icons/u53.png" class="v-ios-chatbubble-outline " alt="">
+                        </button>
+                        <button class="button  button-icon ion-ios-information-outline v_5"></button>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!--   <ion-list>
+            <div ng-repeat="list in inspection_list">
+                <ion-item class=" item-avatar v_1" ng-click="toggleGroup(list,$index)" ng-class="{active: isGroupShown(list)}">
+                    <img ng-src="{{list.Image}}">
+                    <h2 class="v_2"> {{list.Name}}</h2>
+                    <p class="v_3">{{list.Location}}</p>
+                    <p class="v_3">Distance : {{list.Distance}}</p>
+                </ion-item>
+                <ion-item class="item-accordion" ng-show="isGroupShown(list)">
+                    {{list}}
+                    <div style="color:white">asdf</div>
+                    <div class="button-bar v_bg">
+                        <button class="button  button-icon  ion-ios-play-outline v_5" ng-click="goto_inspectionDetail(list.Id)"></button>
+                        <button class="button  button-icon  v_5">
+                            <img src="img/icons/u51.png" class="v-ios-chatbubble-outline " alt="">
+                        </button>
+                        <button class="button  button-icon  v-compass v_6">
+                            <img src="img/icons/u53.png" class="v-ios-chatbubble-outline " alt="">
+                        </button>
+                        <button class="button  button-icon ion-ios-information-outline v_5"></button>
+                    </div>
+                </ion-item>
+            </div>
+        </ion-list> -->
+    </ion-content>
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" id="anand" show-pager="false" ng-if="change_view2">
+        <ion-slide id="p1" ng-repeat="list in inspection_list">
+            <div style="padding: 6px;">
+                <div class="cover-image-container">
+                    <div class="cover-outer-align">
+                        <div class="cover-inner-align">
+                            <div class="cover-image1 v_7" ng-click="toggleGroup(list,$index)">
+                                <p class="v_8">{{list.Distance}}</p>
+                                <div style="height:1px">
+                                <img src="img/icons/u28.png" alt="" style="    height: 45px;">
+                                    
+                                </div>
+                                
+                                <p class="v_9">{{list.Name}}</p>
+                                <p class="v_10">
+                                    {{list.Location}}</p>
+                                <a class="item animated fadeInUp v_4" ng-show="isGroupShown(list)">
+                                    <div class="button-bar v_bg">
+                                        <button class="button  button-icon  ion-ios-play-outline v_5" ng-click="goto_inspectionDetail(list.Id)"></button>
+                                        <button class="button  button-icon  v_5">
+                                            <img src="img/icons/u51.png" class="v-ios-chatbubble-outline " alt="">
+                                        </button>
+                                        <button class="button  button-icon  v-compass v_6">
+                                            <img src="img/icons/u53.png" class="v-ios-chatbubble-outline " alt="">
+                                        </button>
+                                        <button class="button  button-icon ion-ios-information-outline v_5"></button>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="img/icons/u118.png">
+        </ion-slide>
+    </ion-slide-box>
+    <div class="start-footer-btn row" ng-if="change_view2">
+        <div class="col col-25">
+            <button ng-if="!go" class="button button-light button-small icon-left ion-ios-arrow-left  button-clear v_cr" ng-click="slide_decrement()">
+            </button>
+        </div>
+        <div class="col col-50">
+            <h2 class="v_11"> Slide left/right</h2> </div>
+        <div class="col col-25">
+            <button ng-if="!go" class="button button-light button-small icon-right ion-ios-arrow-right start-login-btn button-clear v_cr" ng-click="slide_increment()">
+            </button>
+        </div>
+    </div>
+    <div class=" padding v_12">
+        <a href="#/report" class="button button-balanced button-block v_13">
+            My Status
+        </a>
+    </div>
+</ion-view>

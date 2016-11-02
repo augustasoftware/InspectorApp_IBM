@@ -1,0 +1,40 @@
+<ion-view hide-nav-bar="true" can-swipe-back="false">
+    <ion-content class="bg nnrr">
+        <div class="v_42" ></div>
+        <div class="v_43" >
+            <img src="img/Inspector.png" class="v_44" >
+        </div>
+        <div class="" style="text-align:center;height: 1px;">
+            <img src="img/icons/u19.gif" class="v_44" ng-if="show_loading">
+        </div>
+        <div class="v_45" ></div>
+        <form name="signinForm" novalidate="" class="padding v_46" >
+            <div class="list list-inset v_47" >
+                <label class="item item-input v_48" >
+                    <input id="u6_input" type="text" name="email" placeholder="Enter Email/ User Name" ng-model="login_data.Email" required>
+                </label>
+            </div>
+            <div class="list list-inset v_49" >
+                <label class="item item-input v_48" >
+                    <input id="u6_input" type="password" name="password" placeholder="Enter Password" ng-model="login_data.Password" required>
+                </label>
+            </div>
+            <button class="button button-block button-positive v_50" ng-click="get_login(login_data)" >
+                Log In
+            </button>
+        </form>
+    <!--     <div  class="v_a">
+            <button class="button button-clear button-stable v_51" > Forgot Password?
+            </button>
+        </div> --> 
+     <!--    <div  class="v_a">
+            <button class="button button-clear button-stable v_51" style="font-weight: 600; font-size: 18px;margin-top:90px"> Terms & conditions
+            </button>
+        </div> -->
+
+    </ion-content>
+   <!--  <div class="bar bar-footer v_52" >
+        <div class="title" style="color: white;">Terms & conditions </div>
+    </div> -->
+    
+</ion-view>

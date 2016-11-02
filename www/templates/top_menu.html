@@ -1,0 +1,36 @@
+<ion-modal-view class="v_59" >
+    <ion-content class=" padding" ng-click="close_top_menu()">
+    </ion-content>
+    <div class="bar v_60">
+        <ion-content class="bg nnrr" scroll="false">
+            <div class="list v_61">
+                <a class="item v_62" animate-spin style="  " ng-click="close_top_menu()">
+                    <i class="icon ion-android-close v_63" ></i>
+                </a>
+                <a class="item v_64" ng-click="close_top_menu()" href="#/app/inspection_list" >
+                    <h2 class="v_65">Home</h2>
+                </a>
+                <a class="item v_64 " ng-click="close_top_menu()" >
+                    <h2 class="v_65">Completed Inspections</h2>
+                </a>
+				<a class="item v_64 " ng-click="close_top_menu()" href="#/report" >
+                    <h2 class="v_65">My Reports</h2>
+                </a>
+                <a class="item v_64 " ng-click="close_top_menu();showPopup()">
+                    <h2 class="v_65">Add Phone No</h2>
+                </a>
+                <a class="item v_64 " ng-click="close_top_menu()" >
+                    <h2 class="v_65">Send Feedback</h2>
+                </a>  
+                <a class="item v_64 " ng-click="logout()" >
+                    <h2 class="v_65">Log out</h2>
+                </a>
+
+                 <!--<script id="popup-template.html" type="text/ng-template">
+                 <input ng-model="phoneno" type="text" placeholder="phoneno">
+                 </script>-->
+
+            </div>
+        </ion-content>
+    </div>
+</ion-modal-view>

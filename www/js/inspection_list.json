@@ -1,0 +1,41 @@
+[{
+    "Id": "1",
+    "Contact":"Lauren Nichols",
+    "Name": "Store Location#1",
+    "Image": "img/icons/u28.png",
+    "Url": "#/app/productlist/18/87/Round%20Neck",
+    "Location": "1329 Dean St ,Brooklyn, NY 11216",
+    "Distance": "1.4 miles"
+}, {
+    "Id": "2",
+    "Contact":"Kevin Durant",
+    "Name": "Store Location#2",
+    "Image": "img/icons/u28.png",
+    "Url": "#/app/productlist/18/87/Round%20Neck",
+    "Location": "685 Knnedy, Scarborough ,ON , M1K 2B8",
+    "Distance": "2 miles"
+}, {
+    "Id": "3",
+    "Contact":"Adam Silver",
+    "Name": "Store Location#3",
+    "Image": "img/icons/u28.png",
+    "Url": "#/app/productlist/18/87/Round%20Neck",
+    "Location": "3422 Grant Street, Highland Park, IL 60035",
+    "Distance": "3.7 miles"
+}, {
+    "Id": "4",
+    "Contact":"James Harden",
+    "Name": "Store Location#4",
+    "Image": "img/icons/u28.png",
+    "Url": "#/app/productlist/18/87/Round%20Neck",
+    "Location": "711 E Pear St Vineland, NJ 08360",
+    "Distance": "7 miles"
+}, {
+    "Id": "5",
+    "Contact":"Klay Thompson",
+    "Name": "Store Location#5",
+    "Image": "img/icons/u28.png",
+    "Url": "#/app/productlist/18/87/Round%20Neck",
+    "Location": "91 Lexington Ave, Jersey City, NJ 07304",
+    "Distance": "4.7 miles"
+}]

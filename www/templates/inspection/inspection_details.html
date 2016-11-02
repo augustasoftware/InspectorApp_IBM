@@ -1,0 +1,66 @@
+<ion-view view-title="Inspection Details" hide-back-button="true" can-swipe-back="false">
+    <ion-nav-buttons side="left">
+        <button class="button  button-icon  icon ion-ios-arrow-left" ng-click="goback()"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="list v_14">
+            <div class="item v_15">
+                <div class="v_100">
+                    <h2 class="v_16">LOCATION</h2>
+                    <img src="img/icons/u227.png" alt="" class="v_r">
+                </div>
+                <div class="v_100">
+                    <h2 class=" v_17">{{inspection_detail.Name}}</h2>
+                </div>
+                <div class="v_100">
+                    <p class="v_18">{{inspection_detail.Location}}</p>
+                </div>
+            </div>
+            <div class="item v_15">
+                <div class="v_100">
+                    <h2 class="v_16">CONTACT</h2>
+                    <img src="img/icons/u229.png" alt="" class="v_r">
+                </div>
+                <div class="v_100">
+                    <p class="v_18">{{inspection_detail.Contact}}</p>
+                </div>
+            </div>
+            <div class="item v_15">
+                <div class="v_100">
+                    <h2 class="v_16">INSPECTION NOTES</h2>
+                    <img src="img/icons/u231.png" alt="" class="v_r">
+                </div>
+                <div class="v_100">
+                    <p class="v_19">Way to make notes about the condition of important features in store. Before doing a walk-through, see some of the resources listed below to learn about what types of things to look for as you are doing your inspection.</p>
+                </div>
+            </div>
+            <div class="item v_15">
+                <div class="v_100">
+                    <h2 class="v_16">INSPECTION STATUS</h2>
+                    <img src="img/icons/u233.png" alt="" class="v_r">
+                </div>
+                <div class="v_20">
+                    <div class="v_21"> {{completed}}
+                    </div>
+                    <div class="v_22"> items completed
+                    </div>
+                </div>
+                <div class="v_23">
+                    <div class="v_24"> {{remaining}}
+                    </div>
+                    <div class="v_25"> items remaining
+                    </div>
+                </div>
+                <div class="v_26">
+                    <div class="v_27"> {{inci}}
+                    </div>
+                    <div class="v_28"> incidents listed
+                    </div>
+                </div>
+                <button class="button  button-block v_29" style="" ng-click="goto_checklist()">
+                    Inspection Checklist
+                </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

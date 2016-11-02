@@ -1,0 +1,95 @@
+<ion-view view-title="Inspection Checklist" hide-back-button="true" can-swipe-back="false">
+    <ion-nav-buttons side="left">
+        <button class="button  button-icon  icon ion-ios-arrow-left" ng-click="backdta()"></button>
+    </ion-nav-buttons>
+    <ion-content scroll="false">
+        <div class="v_30">
+            <div class="padding row" ng-init="begin = true">
+                <div class="col">
+                    <button class="button button-block  v_31" ng-click="clk(btntxt)">
+                        {{btntxt}}
+                    </button>                    
+                </div>
+                <div class="col">
+                    <button class="button button-block button-positive v_32" ng-click="backdta()">
+                        Done
+                    </button>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <!-- <ion-content scroll="false" style="margin-top:100px">
+        <div class="v_30"></div>
+    </ion-content> -->
+    <ion-content scroll="true" style="margin-top:100px;">
+        <div class="v_100">
+            <div class="padding row">
+                <div class="col">
+                    <ul class="list">
+                        <div ng-repeat="list in inspection_checklist">
+                            <li class="item item-checkbox" ng-class="{'divactive': list.id == curId || list.status == '1','divntactive': list.id != curId}">
+                                <div ng-click="toggleGroup(list,$index);changeID(list.id)">{{list.title}} </div>
+                                <label class="checkbox v_33" ng-click="change_status('0',list.id)" ng-if="list.status == '1'">
+                                    <input type="checkbox" checked />
+                                </label>
+                                <label class="checkbox v_33" ng-click="change_status('1',list.id)" ng-if="list.status == '0'">
+                                    <input type="checkbox"  />
+                                </label>
+                            </li>
+                            <li class="item v_34" ng-show="isGroupShown(list)" style="padding-left:0px;padding-right:0px;overflow:visible">
+                                <div class="v_35" ng-show="showdetail" style="height:auto;padding-right:10px;padding-left:10px;padding-bottom:15px;float:left;">
+                                    <div class="v_100">
+                                        <img src="img/icons/u231.png" alt="" class="v_l">
+                                    </div>
+                                    <div class="v_100">
+                                        <p class="v_36">Way to make notes about the condition of important features in store. Before doing a walk-through, see some of the resources listed below to learn about what types of things to look for as you are doing your inspection..</p>
+                                    </div>
+                                </div>
+                                <div class="item v_39" style="float:left;width:100%" ng-repeat="it in incidents" ng-if="it.secondid == list.id" ng-class="{'noan':$index==0}"> 
+                                <div class="arrow-up" ng-if="$index == 0"></div>
+                                    <div class="v_40">
+                                        <div class="v_100">
+                                            <p class="v_41">{{it.title}}</p>
+                                            <div style="text-align: right;">
+                                                <img src="img/icons/u603.png" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="v_100">
+                                    <div class=" row">
+                                        <div class="col">
+                                            <button ng-click="showdetail=!showdetail" class="button button-block v_37" style="  " ng-click="goto_checklist()">
+                                                <span ng-hide="showdetail">Show Details</span>
+                                                <span ng-show="showdetail">Hide Details</span>
+                                            </button>
+                                        </div>
+                                        <div class="col">
+                                            <a class="button button-block button-assertive v_38" href="#/addincident/{{Parent_id}}/{{list.id}}">
+                                                Add Incident
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item v_39" ng-repeat="it in incidents" ng-if="it.secondid == list.id" ng-show="!isGroupShown(list)">
+                                <div class="arrow-up" ng-if="$index == 0"></div>
+                                <div class="v_40">
+                                    <div class="v_100">
+                                        <p class="v_41">{{it.title}}</p>
+                                        <div style="text-align: right;">
+                                            <img src="img/icons/u603.png" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <style>
+
+        </style>
+    </ion-content>
+</ion-view>
